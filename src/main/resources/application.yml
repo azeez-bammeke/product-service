@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: curth-product-service
+  cloud:
+    stream:
+      default-binder: kafka
+      kafka:
+        binder:
+          brokers: localhost:29092
+      bindings:
+        productInventory-events-out-0:
+          destination: product.inventory.events
+          content-type: application/json
+        productStatus-events-out-0:
+          destination: product.status.events
+    function:
+      definition: productInventory;productStatus
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/product
+    username: postgres
+    password: pdata@1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+  flyway:
+    locations: classpath:db/migration
+    enabled: true
+    table: schema_history
+
+server:
+  port: 8094
