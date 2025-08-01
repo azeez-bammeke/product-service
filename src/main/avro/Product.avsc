@@ -1,0 +1,20 @@
+{
+  "type": "record",
+  "name": "Product",
+  "namespace": "curthproductservice.avro",
+  "fields": [
+    { "name": "name", "type": "string" },
+    { "name": "description", "type": ["null", "string"], "default": null },
+    { "name": "price", "type": "double" },
+    { "name": "quantity", "type": "int" },
+    { "name": "barcode", "type": ["null", "string"], "default": null },
+    {
+      "name": "productType",
+      "type": {
+        "type": "enum",
+        "name": "ProductType",
+        "symbols": ["ELECTRONICS", "CLOTHING", "FOOD", "OTHER"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "type": "record",
+  "name": "InventoryStatus",
+  "namespace": "curthproductservice.avro",
+  "fields": [
+    { "name": "id", "type": "string" },
+    { "name": "inventoryType", "type": "string" },
+    { "name": "quantity", "type": "int" },
+    { "name": "productName", "type": "string" },
+    { "name": "productType", "type": "string" },
+    { "name": "createdAt", "type": "string" },
+    { "name": "updatedAt", "type": "string" }
+  ]
+}
